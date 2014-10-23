@@ -1,1 +1,0 @@
-Beispiel Kuchendiagramm mit Raphael
