@@ -1,7 +1,7 @@
 /*jslint browser: true, devel: true, unparam: true, sloppy: true, white: true */
 /*global jQuery, $ */
 
-function sz1_zeichneSektor ( x, y, rad, startW, endW ) {
+function zeichneSektor ( x, y, rad, startW, endW ) {
   // stelle Pathstring für einen Sektor zusammen, erst zum Mittelpunkt der Kreises
   var pfadString = "M0,0 ";
   
@@ -22,16 +22,16 @@ function sz1_zeichneSektor ( x, y, rad, startW, endW ) {
   pfadString += "Z";
   //console.log( "pfadString:" + pfadString );
   
-  var sektor = window.sz1_graphPapier.path( pfadString );
+  var sektor = window.graphPapier.path( pfadString );
   sektor.translate( x, y );
   console.log( "sektor:" + sektor );
   return sektor;
 };
 
-function sz1_zeichneGraph( tortenSektorAnteil, tortenSumme ) {
+function zeichneGraph( tortenSektorAnteil, tortenSumme ) {
   $( '#ausgabe' ).text( 'Graph startet...' );
     
-  window.sz1_graphPapier = Raphael( 'graph', 300, 300 );
+  window.graphPapier = Raphael( 'graph', 300, 300 );
   
   // definiere Array mit Werten
   var tortenSektorFarbe = '#770077';
@@ -43,7 +43,7 @@ function sz1_zeichneGraph( tortenSektorAnteil, tortenSumme ) {
   
   // zeichne den ganzen Kreis in hellgrau
   var kreis;
-  kreis = sz1_zeichneSektor( xMittel, yMittel, radius,
+  kreis = zeichneSektor( xMittel, yMittel, radius,
                     0, 2 * Math.PI );
   kreis.attr( {
     'fill': '#DDDDDD',
@@ -55,7 +55,7 @@ function sz1_zeichneGraph( tortenSektorAnteil, tortenSumme ) {
   var sektorenWinkel, sektor;
   var startWinkel = -0.5 * Math.PI;
   sektorenWinkel = tortenSektorAnteil / tortenSumme * Math.PI * 2;
-  sektor = sz1_zeichneSektor( xMittel, yMittel, radius,
+  sektor = zeichneSektor( xMittel, yMittel, radius,
                     startWinkel, startWinkel + sektorenWinkel );
   sektor.attr( {
     'fill': tortenSektorFarbe,
@@ -71,6 +71,6 @@ jQuery( function() {
   $( '#ausgabe' ).text( 'Starten...' );
   console.log( "Starten..." );
   
-  sz1_zeichneGraph( 10, 12 );
+  zeichneGraph( 10, 12 );
   console.log( "Fertig!" );
 } );
