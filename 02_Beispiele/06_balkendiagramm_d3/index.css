@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+#startscreen {
+  padding: 2em;
+  background-color: white;
+}
+#input, #output {
+  margin: 1em 0;
+}
+
+.balken {
+  margin: 0.2em 0;
+  padding: 0.2em 0.5em;
+  background-color: #aaf;
+  border: 1px solid black;
+}
