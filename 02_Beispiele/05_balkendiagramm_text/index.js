@@ -34,18 +34,18 @@ function zeichneGraph( inBalkenWerte ) {
       cGraphBreite = 240;
   
   // Hole aus dem komplexen Objekt einen Array der Schlüssel
-  var balkenSchlüssel = Object.keys( inBalkenWerte );
+  var balkenSchluessel = Object.keys( inBalkenWerte );
   
   // finde das Maximum der Werte, so dass die Balken das Diagramm
   // immer füllen
-  var maxWert = balkenSchlüssel.reduce( function( max, e ) {
+  var maxWert = balkenSchluessel.reduce( function( max, e ) {
     return max > inBalkenWerte[ e ] ? max : inBalkenWerte[ e ];
   } );
   var skalierungsFaktor = cGraphBreite / maxWert;
   
   // zeichne einen Balken für jeden Wert im Array
   // nutze Higher Order Function FOREACH, um für jeden Wert etwas auszuführen
-  balkenSchlüssel.forEach( function( e ) {
+  balkenSchluessel.forEach( function( e ) {
   
     // zeichne einen Balken, Parameter: Registrierpunkt X/Y, Brete
     var balkenFarbe = '#' + Math.random().toString(16).substring(2, 8);
