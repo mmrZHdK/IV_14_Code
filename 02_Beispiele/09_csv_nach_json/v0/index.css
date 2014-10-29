@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+#startscreen {
+  background-color: white;
+}
+#input, #output {
+  margin: 1em 0;
+  font-size: 7px;
+}
